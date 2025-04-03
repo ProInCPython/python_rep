@@ -2,8 +2,10 @@ try:
     a, b = list(map(int, input().split()))
     y = a/b
 except ZeroDivisionError:
-    print("Ошибка деления на ноль!")
-except ValueError:
-    print("Неверный формат данных!")
+    print("Zero division error!")
+except TypeError:
+    print("Wrong input data format!")
+except:
+    print("Other error(s)")
 else:
     print(y)
