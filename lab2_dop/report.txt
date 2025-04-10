@@ -1,0 +1,79 @@
+Time: 2025/4/10 18:20:45
+Top students:
+	1) William - 5.0
+	2) Jessica - 4.9
+	3) Michael - 4.8
+	4) Sally - 4.7
+	5) John - 4.6
+	6) Amanda - 4.5
+	7) Bob - 4.4
+	8) Julia - 4.1
+	9) Jill - 2.9
+	10) James - 2.5
+Average age: 20.3
+Students with > 3.8 score: 8
+
+Time: 2025/4/10 18:21:23
+Top students:
+	1) William - 5.0
+	2) Jessica - 4.9
+	3) Michael - 4.8
+	4) Sally - 4.7
+	5) John - 4.6
+	6) Amanda - 4.5
+	7) Bob - 4.4
+	8) Julia - 4.1
+	9) Cole - 3.9
+	10) Jill - 2.9
+	11) James - 2.5
+Average age: 21.2
+Students with > 4.0 score: 8
+
+Time: 2025/4/10 18:22:18
+Top students:
+	1) William - 5.0
+	2) Jessica - 4.9
+	3) Michael - 4.8
+	4) Sally - 4.7
+	5) John - 4.6
+	6) Amanda - 4.5
+	7) Bob - 4.4
+	8) Julia - 4.1
+	9) Cole - 3.9
+	10) Jill - 2.9
+	11) James - 2.5
+Average age: 21.2
+Students with > 4.0 score: 8
+
+Time: 2025/4/10 18:23:23
+Top students:
+	1) William - 5.0
+	2) Jessica - 4.9
+	3) Michael - 4.8
+	4) Sally - 4.7
+	5) John - 4.6
+	6) Amanda - 4.5
+	7) Bob - 4.4
+	8) Julia - 4.1
+	9) Cole - 3.9
+	10) Jill - 2.9
+	11) James - 2.5
+Average age: 21.2
+Students with > 4.0 score: 8
+
+Time: 2025/4/10 18:23:41
+Top students:
+	1) William - 5.0
+	2) Jessica - 4.9
+	3) Michael - 4.8
+	4) Sally - 4.7
+	5) John - 4.6
+	6) Amanda - 4.5
+	7) Bob - 4.4
+	8) Julia - 4.1
+	9) Cole - 3.9
+	10) Jill - 2.9
+	11) James - 2.5
+Average age: 21.2
+Students with > 4.5 score: 5
+
