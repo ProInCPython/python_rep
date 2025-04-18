@@ -21,9 +21,9 @@ class Teacher(Person):
 
     Attributes
     ----------
-    name : str, private
+    name : str
         имя человека
-    age : int, private
+    age : int
         возраст человека
     __subject : str, private
         предмет, который ведёт преподаватель
@@ -46,7 +46,7 @@ class Teacher(Person):
         *список всех студентов учителя, каждый студент выводится в формате Student.display_info()*
         """
 
-    def __init__(self, subject: str, students: List[Student], name, age):
+    def __init__(self, subject: str, students: List[Student], name : str, age : int):
         self.__subject = subject
         self.__students = students
         super().__init__(name, age)
