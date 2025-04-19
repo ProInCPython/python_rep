@@ -1,0 +1,23 @@
+2025/4/19 11:41:31
+User guess was: 5. It was smaller than the real number. Attempts left: 4.
+User guess was: 3. It was smaller than the real number. Attempts left: 3.
+User guess was: 2. It was smaller than the real number. Attempts left: 2.
+User guess was: 1. It was smaller than the real number. Attempts left: 1.
+Game over. User last guess was: 0. Total game time: 0:00:12.025591.
+2025/4/19 11:42:33
+User guess was: 15. It was bigger than the real number. Attempts left: 4.
+User guess was: 19. It was bigger than the real number. Attempts left: 3.
+User guess was: 20. It was bigger than the real number. Attempts left: 2.
+User guess was: 10. It was bigger than the real number. Attempts left: 1.
+Game over. User last guess was: 5. Total game time: 0:00:13.687646.
+2025/4/19 11:43:25
+User guess was: 3. It was bigger than the real number. Attempts left: 4.
+User guess was: 4. It was bigger than the real number. Attempts left: 3.
+User guess was: 2. He/she guessed the number in 2 attempts. Total game time: 0:00:04.461859.
+2025/4/19 11:44:15
+User guess was: 5. It was bigger than the real number. Attempts left: 4.
+User guess was: 4. He/she guessed the number in 1 attempts. Total game time: 0:00:05.495755.
+2025/4/19 12:37:38
+User guess was: 1. It was smaller than the real number. Attempts left: 4.
+User guess was: 5. It was bigger than the real number. Attempts left: 3.
+User guess was: 3. He/she guessed the number in 2 attempts. Total game time: 0:00:17.951315.
