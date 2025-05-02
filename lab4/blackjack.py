@@ -4,37 +4,41 @@ class BlackjackController:
 
     def __init__(self):
         self.__game = Blackjack()
-        self.__balance = self.__game.balance
 
 
     def controller(self):
-        print(f"Ваш текущий баланс: {self.__balance}")
-        bet = 0
-        flag = True
-        while flag:
-            try:
-                flag = False
-                bet = int(input("Введите вашу ставку: "))
-            except:
-                flag = True
-        if bet <= 0:
-            print("Ставка должна быть больше нуля!")
-        elif self.__balance - bet < 0:
-            print("Не хватает денег для игры!")
-            if input("Хотите добавить на счёт 10 долларов(YES/NO)?") == "YES":
-                self.__balance += 10
-            self.controller()
-
-        self.__game.new_game(bet)
-
-        while not self.__game.game_over:
-            c = input("hit or stand? ")
-            if c == "hit":
-                print(self.__game.hit())
-            elif c == "stand":
-                print(self.__game.stand())
+        while True:
+            command = input("Нажмите Enter, чтобы начать игру или введите EXIT, чтобы выйти: ")
+            if command == "EXIT":
+                break
             else:
-                print("Что-то пошло не так...")
+                print(f"Your balance: {self.__game.balance}")
+                bet = 0
+                flag = True
+                while flag:
+                    try:
+                        flag = False
+                        bet = int(input("Enter your bet: "))
+                    except:
+                        flag = True
+                if bet <= 0:
+                    print("The bet must be greater than 0!")
+                elif self.__game.balance - bet < 0:
+                    print("Not enough money to play!")
+                    if input("Do you want to add 10$ to your balance(YES/NO)?") == "YES":
+                        self.__game.balance += 10
+                    self.controller()
+
+                self.__game.new_game(bet)
+
+                while not self.__game.game_over:
+                    c = input("hit or stand? ")
+                    if c == "hit":
+                        print(self.__game.hit())
+                    elif c == "stand":
+                        print(self.__game.stand())
+                    else:
+                        print("Something went wrong...")
 
 
 class Blackjack:
@@ -48,6 +52,7 @@ class Blackjack:
         f.close()
 
     def new_game(self, bet : int):
+        self.__init__()
         self.__bet = bet
         print("Your cards: " + " ".join(list(map(str,self.player_hand))))
         print("Dealer's upcard: " + str(self.player_hand[0]))
@@ -69,7 +74,7 @@ class Blackjack:
 
         if sum(self.dealer_hand) > 21:
             self.end_game("win")
-            return f"Dealer bust! You won {self.__bet} dollars!"
+            return f"Dealer bust! You won {self.__bet * 2} dollars!"
         elif sum(self.dealer_hand) == 21:
             if sum(self.player_hand) == 21:
                 self.end_game("even")
@@ -85,14 +90,14 @@ class Blackjack:
             return f"Even! You returned your {self.__bet} dollars bet."
 
     def end_game(self, status : str):
-        self.__game_over = True
         if status == "win":
-            self.balance += self.__bet * 2
+            self.__balance += self.__bet * 2
         elif status == "loss":
-            self.balance -= self.__bet
+            self.__balance -= self.__bet
         f = open("balance.txt", "w")
-        f.write(str(self.balance))
+        f.write(str(self.__balance))
         f.close()
+        self.__game_over = True
 
     @property
     def player_hand(self):
@@ -114,12 +119,6 @@ class Blackjack:
     def balance(self, value):
         self.__balance = value
 
+# controller = BlackjackController()
+# controller.controller()
 
-while True:
-
-    command = input("Нажмите Enter, чтобы начать игру или введите EXIT, чтобы выйти: ")
-    if command == "EXIT":
-        break
-    else:
-        controller = BlackjackController()
-        controller.controller()

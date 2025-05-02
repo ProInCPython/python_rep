@@ -7,35 +7,40 @@ class GameController:
         self.__game = Game()
 
     def controller(self):
-        start = 1
-        end = 100
-        flag = True
-        while flag:
-            try:
-                flag = False
-                start = int(input("Введите нижнее число: "))
-            except:
+        while True:
+            command = input("Нажмите Enter, чтобы начать игру или введите EXIT, чтобы выйти: ")
+            if command == "EXIT":
+                break
+            else:
+                start = 1
+                end = 100
                 flag = True
-        flag = True
-        while flag:
-            try:
-                flag = False
-                end = int(input("Введите верхнее число: "))
-            except:
+                while flag:
+                    try:
+                        flag = False
+                        start = int(input("Введите нижнее число: "))
+                    except:
+                        flag = True
                 flag = True
+                while flag:
+                    try:
+                        flag = False
+                        end = int(input("Введите верхнее число: "))
+                    except:
+                        flag = True
 
-        self.__game.new_game(start, end)
+                self.__game.new_game(start, end)
 
-        while not self.__game.is_game_over:
-            flag = True
-            while flag:
-                try:
-                    flag = False
-                    guess = int(input("Попробуйте угадать число: "))
-                except:
+                while not self.__game.is_game_over:
                     flag = True
+                    while flag:
+                        try:
+                            flag = False
+                            guess = int(input("Попробуйте угадать число: "))
+                        except:
+                            flag = True
 
-            print(self.__game.guess(guess))
+                    print(self.__game.guess(guess))
 
 
 
@@ -53,18 +58,20 @@ class Game:
             self.__attempts -= 1
             if self.__attempts > 0:
                 self.logger.bigger(number, self.attempts)
-                return f"Больше! У вас осталось {self.__attempts} " + self.attempts_generator()
+                return f"Загаданное число меньше вашего! У вас осталось {self.__attempts} " + self.attempts_generator()
             self.logger.game_over(number, datetime.now() - self.__game_start_time)
-            return f"Вы проиграли. Число, которое было загадано: {self.__number}"
+            self.__is_game_over = True
+            return f"Вы проиграли. Число, которое было загадано: {self.__number}. Времени потрачено: {datetime.now() - self.__game_start_time}."
         elif number < self.__number:
             self.__attempts -= 1
             if self.__attempts > 0:
                 self.logger.smaller(number, self.attempts)
-                return f"Меньше! У вас осталось {self.__attempts} " + self.attempts_generator()
+                return f"Загаданное число больше вашего! У вас осталось {self.__attempts} " + self.attempts_generator()
             self.logger.game_over(number, datetime.now() - self.__game_start_time)
             self.__is_game_over = True
             return f"Вы проиграли. Число, которое было загадано: {self.__number}. Времени потрачено: {datetime.now() - self.__game_start_time}."
         else:
+            self.__attempts -= 1
             self.logger.correct(number, self.attempts, datetime.now() - self.__game_start_time)
             self.__is_game_over = True
             return f"Вы угадали число за {5 - self.__attempts} " + self.attempts_generator() + f". Поздравляем! Времени потрачено: {datetime.now() - self.__game_start_time}."
@@ -74,6 +81,7 @@ class Game:
         self.__attempts = 5
         self.__logger = Logger()
         self.__game_start_time = datetime.now()
+        self.__is_game_over = False
 
     def attempts_generator(self) -> str:
         if 2 <= self.__attempts <= 4: return "попытки"
@@ -113,11 +121,7 @@ class Logger:
         self.__log.write(f"Game over. User last guess was: {guess}. Total game time: {time}.\n")
         self.__log.close()
 
-while True:
 
-    command = input("Нажмите Enter, чтобы начать игру или введите EXIT, чтобы выйти: ")
-    if command == "EXIT":
-        break
-    else:
-        controller = GameController()
-        controller.controller()
+# controller = GameController()
+# controller.controller()
+
