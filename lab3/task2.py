@@ -21,10 +21,10 @@ class Teacher(Person):
 
     Attributes
     ----------
-    name : str
-        имя человека
-    age : int
-        возраст человека
+    name : str, private
+        имя преподавателя
+    age : int, private
+        возраст преподавателя
     __subject : str, private
         предмет, который ведёт преподаватель
     __students : List[Student], private
@@ -101,7 +101,7 @@ class Teacher(Person):
     def list_students(self):
         """Выведи в консоль список всех студентов преподавателя."""
 
-        print(f"Студенты учителя с именем {self.name}")
+        print(f"Студенты учителя с именем {self.name}:")
         for i in range(len(self.__students)):
             print(self.__students[i].display_info())
 
