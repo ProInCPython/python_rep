@@ -11,3 +11,5 @@ lab3 extra tasks - done on May 2nd at home
 lab4 - done on May 2nd at home
 
 lab5 - done on May 10th at home
+
+lab6 - done on May 29th at home
