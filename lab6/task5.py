@@ -1,12 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def is_passed(score):
-    if score >= 60:
-        return 1
-    else:
-        return 0
-
 data = pd.read_csv("students.csv")
 data.drop(columns=['Student_ID','Last_Name', 'Email', 'Gender', 'Attendance (%)',
                    'Midterm_Score', 'Final_Score', 'Assignments_Avg',
